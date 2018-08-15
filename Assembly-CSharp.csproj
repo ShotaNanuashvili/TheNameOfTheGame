@@ -62,10 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraSystem.cs" />
+    <Compile Include="Assets\sprites\BulletEngine.cs" />
+    <Compile Include="Assets\sprites\BulletSpawner.cs" />
     <Compile Include="Assets\sprites\ComplexEnemyMove.cs" />
     <Compile Include="Assets\sprites\EnemyMove.cs" />
     <Compile Include="Assets\sprites\PlayerHealth.cs" />
     <Compile Include="Assets\sprites\PlayerMove.cs" />
+    <Compile Include="Assets\sprites\PlayerShoot.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/User/Documents/tryout/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

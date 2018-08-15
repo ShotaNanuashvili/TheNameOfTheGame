@@ -51,9 +51,6 @@ public class EnemyMove : MonoBehaviour {
         if (target == null)
             return;
 
-        // face the target
-        //transform.LookAt(target);
-
         //get the distance between the chaser and the target
         float distance = Vector2.Distance(transform.position, target.position);
 
