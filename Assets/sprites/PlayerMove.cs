@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour {
     private bool facingRight = false;
     private int playerJumpPower = 1200;
     private float moveX;
+    public bool isGrounded;
 	
 	// Update is called once per frame
 	void Update ()
@@ -19,7 +20,7 @@ public class PlayerMove : MonoBehaviour {
     {
         //controls
         moveX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
         }
@@ -39,6 +40,7 @@ public class PlayerMove : MonoBehaviour {
     void Jump()
     {
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        isGrounded = false;
     }
 
     void FlipPlayer()
@@ -47,5 +49,13 @@ public class PlayerMove : MonoBehaviour {
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
     }
 }

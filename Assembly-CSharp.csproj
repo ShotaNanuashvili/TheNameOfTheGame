@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraSystem.cs" />
+    <Compile Include="Assets\sprites\EnemyMove.cs" />
+    <Compile Include="Assets\sprites\PlayerHealth.cs" />
     <Compile Include="Assets\sprites\PlayerMove.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/User/Documents/tryout/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
