@@ -7,10 +7,33 @@ public class EnemyMove : MonoBehaviour {
     public int enemySpeed;
     public int xMoveDirection;
     public Transform target;
-    const float MINDIST = 1.06f;
+    const float MINDIST = 1.3f;
 	
 	// Update is called once per frame
     void Start()
+    {
+        MyStart();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        MyUpdate();
+    }
+            
+
+    // Set the target of the chaser
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
+    public virtual void Move()
+    {
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMoveDirection, 0) * enemySpeed;
+    }
+
+    public void MyStart()
     {
         // if no target specified, assume the player
         if (target == null)
@@ -22,10 +45,9 @@ public class EnemyMove : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MyUpdate()
     {
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMoveDirection, 0) * enemySpeed;
+        Move();
         if (target == null)
             return;
 
@@ -41,17 +63,10 @@ public class EnemyMove : MonoBehaviour {
             SceneManager.LoadScene("Scene1");
         }
 
-        if(target.position.x > transform.position.x && xMoveDirection < 0 
-            || target.position.x < transform.position.x && xMoveDirection > 0) 
+        if (target.position.x > transform.position.x && xMoveDirection < 0
+            || target.position.x < transform.position.x && xMoveDirection > 0)
         {
             xMoveDirection *= -1;
         }
-    }
-            
-
-    // Set the target of the chaser
-    public void SetTarget(Transform newTarget)
-    {
-        target = newTarget;
     }
 }
