@@ -79,6 +79,7 @@
     <Compile Include="Assets\scripts\PlayerStruckBehaviour.cs" />
     <Compile Include="Assets\scripts\RestoreAmmoBehaviour.cs" />
     <Compile Include="Assets\scripts\ThrowPowerUpBehaviour.cs" />
+    <Compile Include="Assets\scripts\WinOnPlayerImpactBehaviour.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/User/Documents/tryout/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
