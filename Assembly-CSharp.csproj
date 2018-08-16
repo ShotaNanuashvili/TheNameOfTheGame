@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraSystem.cs" />
+    <Compile Include="Assets\scripts\BlinkSpriteBehaviour.cs" />
     <Compile Include="Assets\scripts\BulletEngine.cs" />
     <Compile Include="Assets\scripts\BulletSpawner.cs" />
     <Compile Include="Assets\scripts\ComplexEnemyMove.cs" />

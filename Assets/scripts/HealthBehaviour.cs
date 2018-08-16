@@ -40,6 +40,7 @@ public class HealthBehaviour : MonoBehaviour
             if (_immuneTime <= TimeSpan.FromSeconds(0))
             {
                 IsImmune = false;
+                gameObject.layer = 10;
                 Debug.Log("Immunity Lost!");
             }
         }
@@ -61,5 +62,7 @@ public class HealthBehaviour : MonoBehaviour
     {
         IsImmune = true;
         _immuneTime = TimeSpan.FromSeconds(ImmunityDurationInSeconds);
+        var blinking = gameObject.GetComponent<BlinkSpriteBehaviour>();
+        if(blinking != null) blinking.StartBlinking();
     }
 }
