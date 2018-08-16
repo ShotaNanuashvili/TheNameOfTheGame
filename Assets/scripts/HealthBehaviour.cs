@@ -54,8 +54,15 @@ public class HealthBehaviour : MonoBehaviour
             _currentHealth = Mathf.Clamp(_currentHealth, MinHealth, MaxHealth);
             if (gameObject.CompareTag("Player"))
                 ApplyImmunity();
-            Debug.Log("Damage Taken!");
+            Debug.Log("Damage Taken! Amount: " + damageAmount.ToString());
         }
+
+    }
+    public void ApplyHealing(int healingAmount)
+    {
+        _currentHealth += healingAmount;
+        _currentHealth = Mathf.Clamp(_currentHealth, MinHealth, MaxHealth);
+        Debug.Log("Healing Taken! Amount: " + healingAmount.ToString());
     }
 
     public void ApplyImmunity()
