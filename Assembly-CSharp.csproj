@@ -79,6 +79,8 @@
     <Compile Include="Assets\scripts\PlayerMove.cs" />
     <Compile Include="Assets\scripts\PlayerShoot.cs" />
     <Compile Include="Assets\scripts\PlayerStruckBehaviour.cs" />
+    <Compile Include="Assets\scripts\ProgressSceneOnAnyKey.cs" />
+    <Compile Include="Assets\scripts\RestartGame.cs" />
     <Compile Include="Assets\scripts\RestoreAmmoBehaviour.cs" />
     <Compile Include="Assets\scripts\RestoreHealthBehaviour.cs" />
     <Compile Include="Assets\scripts\ThrowPowerUpBehaviour.cs" />
