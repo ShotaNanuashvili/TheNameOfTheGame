@@ -60,7 +60,14 @@ public class EnemyMove : MonoBehaviour {
             HealthBehaviour health = target.GetComponent(typeof(HealthBehaviour)) as HealthBehaviour;
             DamageBehaviour damage = gameObject.GetComponent(typeof(DamageBehaviour)) as DamageBehaviour;
             if (health != null && damage != null)
+            {
+                if (!health.IsImmune)
+                {
+                    target.GetComponent<AudioSource>().Play();
+                }
                 health.ApplyDamage(damage.DamageAmount);
+            }
+                
         }
 
         if (target.position.x > transform.position.x && xMoveDirection < 0
